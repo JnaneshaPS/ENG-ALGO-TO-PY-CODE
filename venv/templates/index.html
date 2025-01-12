@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudocode to Python Converter</title>
+</head>
+<body>
+    <h1>Pseudocode to Python Converter</h1>
+    <form action="/convert" method="post">
+        <textarea name="code" rows="10" cols="50">{{ code }}</textarea><br>
+        <input type="submit" value="Convert">
+    </form>
+    {% if tokens %}
+    <h2>Tokens:</h2>
+    <pre>{{ tokens }}</pre>
+    {% endif %}
+    {% if ast %}
+    <h2>Parsed AST (Tree):</h2>
+    <pre>{{ ast }}</pre>
+    {% endif %}
+    {% if python_code %}
+    <h2>Generated Python Code:</h2>
+    <pre>{{ python_code }}</pre>
+    {% endif %}
+</body>
+</html>
